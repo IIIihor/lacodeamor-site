@@ -1,91 +1,314 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>LaçoDeAmor</title>
+export default function FirmWebsite() {
+  const reviews = [
+    {
+      name: "Ana, 24",
+      text: "Gostei porque tudo foi explicado de forma simples. O suporte respondeu rápido e me ajudou desde o início.",
+    },
+    {
+      name: "Beatriz, 27",
+      text: "A plataforma é organizada e o horário flexível me ajudou muito. A equipe acompanha e orienta em cada etapa.",
+    },
+    {
+      name: "Marina, 22",
+      text: "Eu tinha dúvidas no começo, mas o processo foi tranquilo. O atendimento é educado e passa segurança.",
+    },
+  ];
 
-<style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#fafafa;
-color:#333;
-text-align:center;
+  const steps = [
+    {
+      title: "1. Cadastro",
+      text: "Você entra em contato com a nossa equipe e recebe todas as informações iniciais para participação.",
+    },
+    {
+      title: "2. Orientação",
+      text: "Explicamos como funciona a plataforma, as regras, o suporte disponível e tiramos suas dúvidas.",
+    },
+    {
+      title: "3. Participação",
+      text: "Você conversa com usuários estrangeiros por mensagens, com acompanhamento da nossa equipe experiente.",
+    },
+    {
+      title: "4. Ganhos",
+      text: "Com consistência, a participação pode gerar renda extra estável e até o recebimento de presentes na plataforma.",
+    },
+  ];
+
+  const facts = [
+    { value: "10+", label: "anos de experiência" },
+    { value: "5.000+", label: "mulheres já colaboraram conosco" },
+    { value: "US$ 1M+", label: "pagos às participantes" },
+    { value: "20+", label: "países com presença" },
+  ];
+
+  const benefits = [
+    "Horário flexível para participar quando quiser",
+    "Possibilidade de renda extra de forma prática",
+    "Suporte de gerentes experientes",
+    "Contato com pessoas de diferentes países",
+    "Plataforma organizada, segura e com regras claras",
+    "Ambiente respeitoso e comunicação amigável",
+  ];
+
+  const faq = [
+    {
+      q: "Quem pode participar?",
+      a: "A participação é destinada apenas a mulheres maiores de 18 anos.",
+    },
+    {
+      q: "Preciso aparecer em vídeo?",
+      a: "Não. A participação acontece principalmente por mensagens. Em alguns casos podem ser solicitadas fotos simples do dia a dia.",
+    },
+    {
+      q: "É seguro?",
+      a: "Sim. Trabalhamos com regras claras, equipe de suporte e acompanhamento para manter um ambiente respeitoso e organizado.",
+    },
+    {
+      q: "Conteúdo adulto é permitido?",
+      a: "Não. Fotos íntimas ou conteúdo adulto não são permitidos.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#fffafc] text-slate-900">
+      <header className="sticky top-0 z-30 border-b border-rose-100 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <div>
+            <div className="text-2xl font-bold tracking-tight text-rose-600">LaçoDeAmor</div>
+            <div className="text-sm text-slate-500">Conectando pessoas ao redor do mundo</div>
+          </div>
+          <nav className="hidden gap-6 text-sm md:flex">
+            <a href="#about" className="hover:text-rose-600">Sobre</a>
+            <a href="#work" className="hover:text-rose-600">Como funciona</a>
+            <a href="#benefits" className="hover:text-rose-600">Vantagens</a>
+            <a href="#reviews" className="hover:text-rose-600">Depoimentos</a>
+            <a href="#faq" className="hover:text-rose-600">Perguntas</a>
+            <a href="#contacts" className="hover:text-rose-600">Contato</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-50 via-white to-pink-50" />
+          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <div className="mb-5 inline-flex rounded-full border border-rose-200 bg-white px-4 py-1 text-sm text-rose-600 shadow-sm">
+                Apenas mulheres 18+ • Plataforma internacional • Suporte especializado
+              </div>
+              <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+                Ganhe renda extra conversando com estrangeiros de forma simples e segura
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                A LaçoDeAmor convida mulheres maiores de 18 anos para participar de uma plataforma internacional
+                onde é possível conversar com usuários estrangeiros por mensagens. Com acompanhamento da nossa equipe,
+                a participação pode se tornar uma fonte de renda extra estável ao longo do tempo.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#contacts"
+                  className="rounded-2xl bg-rose-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-0.5 hover:bg-rose-700"
+                >
+                  Quero participar
+                </a>
+                <a
+                  href="#work"
+                  className="rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                >
+                  Como funciona
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
+                <div>✔ Horário flexível</div>
+                <div>✔ Comunicação por mensagens</div>
+                <div>✔ Regras claras</div>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              <div className="rounded-[28px] bg-white p-6 shadow-xl shadow-rose-100 ring-1 ring-rose-100">
+                <div className="text-sm text-slate-500">Por que escolher a LaçoDeAmor</div>
+                <div className="mt-4 grid gap-4">
+                  <div className="rounded-2xl bg-rose-50 p-4">
+                    <div className="font-semibold">Suporte real de gerentes experientes</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-600">
+                      Nossa equipe acompanha o processo e ajuda na organização das conversas desde o início.
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-pink-50 p-4">
+                    <div className="font-semibold">Participação flexível</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-600">
+                      Você escolhe quando participar, no seu ritmo, com mais praticidade no dia a dia.
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-rose-50 p-4">
+                    <div className="font-semibold">Ambiente organizado e respeitoso</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-600">
+                      Trabalhamos com regras claras para proteger as participantes e manter um ambiente seguro.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {facts.map((fact) => (
+                  <div key={fact.label} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+                    <div className="text-3xl font-bold text-rose-600">{fact.value}</div>
+                    <div className="mt-2 text-sm text-slate-600">{fact.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Sobre a empresa</div>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Uma comunidade internacional com experiência e suporte</h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                A LaçoDeAmor atua há mais de 10 anos no mercado internacional e já colaborou com milhares de mulheres.
+                Nosso foco é oferecer uma estrutura clara, com orientação profissional, regras transparentes e atendimento
+                humanizado para quem deseja participar da plataforma com mais segurança e confiança.
+              </p>
+              <p className="mt-4 leading-8 text-slate-600">
+                Além da possibilidade de renda extra, muitas participantes valorizam a flexibilidade do processo,
+                o contato com outras culturas e o suporte constante da nossa equipe.
+              </p>
+            </div>
+            <div className="rounded-[32px] bg-slate-900 p-8 text-white shadow-xl">
+              <div className="text-xl font-semibold">Fatos sobre a LaçoDeAmor</div>
+              <div className="mt-6 grid gap-4 text-sm">
+                <div className="rounded-2xl bg-white/10 p-4">⭐ Mais de 10 anos de experiência no mercado internacional</div>
+                <div className="rounded-2xl bg-white/10 p-4">👩 Mais de 5.000 mulheres já colaboraram conosco</div>
+                <div className="rounded-2xl bg-white/10 p-4">💰 Mais de 1 milhão de dólares pagos às participantes</div>
+                <div className="rounded-2xl bg-white/10 p-4">🌍 Presença em mais de 20 países ao redor do mundo</div>
+                <div className="rounded-2xl bg-white/10 p-4">🏆 Destaque no setor entre 2020 e 2026</div>
+                <div className="rounded-2xl bg-white/10 p-4">🤝 Equipe profissional de suporte e gerentes experientes</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="work" className="border-y border-rose-100 bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-2xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Como funciona</div>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Um processo simples, claro e com acompanhamento</h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                Nossa equipe orienta você em cada etapa para que tudo seja compreendido de forma prática desde o início.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {steps.map((step) => (
+                <div key={step.title} className="rounded-[28px] bg-[#fff8fb] p-6 shadow-sm ring-1 ring-rose-100">
+                  <div className="text-lg font-semibold">{step.title}</div>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="benefits" className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Vantagens</div>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Mais praticidade, flexibilidade e acompanhamento</h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                Participar com a LaçoDeAmor significa contar com suporte, orientação e uma estrutura organizada para começar com mais tranquilidade.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {benefits.map((item) => (
+                <div key={item} className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-rose-500" />
+                    <div className="text-sm leading-7 text-slate-700">{item}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="reviews" className="border-y border-rose-100 bg-gradient-to-b from-white to-rose-50">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-2xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Depoimentos</div>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">O que dizem sobre a experiência</h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                Comentários de participantes que conheceram a nossa estrutura e atendimento.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {reviews.map((review) => (
+                <div key={review.name} className="rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-rose-100">
+                  <div className="text-lg font-semibold">{review.name}</div>
+                  <p className="mt-4 leading-7 text-slate-600">“{review.text}”</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-2xl">
+            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Perguntas frequentes</div>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Dúvidas comuns</h2>
+          </div>
+          <div className="mt-10 grid gap-4">
+            {faq.map((item) => (
+              <div key={item.q} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+                <div className="font-semibold">{item.q}</div>
+                <div className="mt-2 text-sm leading-7 text-slate-600">{item.a}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contacts" className="mx-auto max-w-6xl px-6 pb-20">
+          <div className="rounded-[32px] bg-slate-900 p-8 text-white shadow-2xl md:p-10">
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <div>
+                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-300">Contato</div>
+                <h2 className="mt-3 text-3xl font-bold md:text-4xl">Quer saber como participar?</h2>
+                <p className="mt-4 max-w-lg leading-8 text-slate-300">
+                  Fale com a nossa equipe para receber informações, entender como funciona a plataforma e tirar suas dúvidas com tranquilidade.
+                </p>
+              </div>
+              <div className="grid gap-4 text-sm">
+                <a
+                  href="https://wa.me/380994944809"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl bg-green-500 px-5 py-4 text-center font-semibold text-white transition hover:opacity-90"
+                >
+                  Falar no WhatsApp
+                </a>
+                <a
+                  href="https://www.instagram.com/laco.deamor.oficial?igsh=M2ptbWw2bnljaWt2&utm_source=qr"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl bg-pink-500 px-5 py-4 text-center font-semibold text-white transition hover:opacity-90"
+                >
+                  Instagram oficial
+                </a>
+                <div className="rounded-2xl bg-white/10 p-4">E-mail: laco.deamor.oficiall@gmail.com</div>
+                <div className="rounded-2xl bg-white/10 p-4">Horário de atendimento: Seg–Sex, 09:00–18:00</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <a
+        href="https://wa.me/380994944809"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 rounded-full bg-green-500 px-5 py-3 text-sm font-semibold text-white shadow-xl transition hover:scale-105"
+      >
+        WhatsApp
+      </a>
+    </div>
+  );
 }
-
-header{
-background:#111;
-color:white;
-padding:40px 20px;
-}
-
-section{
-padding:40px 20px;
-max-width:900px;
-margin:auto;
-}
-
-button{
-padding:15px 30px;
-border:none;
-border-radius:12px;
-font-size:18px;
-cursor:pointer;
-margin:10px;
-}
-
-.whatsapp{background:#25D366;color:white;}
-.instagram{background:#E1306C;color:white;}
-
-footer{
-background:#111;
-color:white;
-padding:20px;
-margin-top:40px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>LaçoDeAmor</h1>
-<p>Ganhe renda extra conversando com estrangeiros</p>
-</header>
-
-<section>
-<h2>Como funciona</h2>
-
-<p>
-Nossa empresa convida mulheres maiores de 18 anos para participar de
-uma plataforma internacional onde é possível conversar com homens estrangeiros.
-</p>
-
-<p>✔ Horário flexível</p>
-<p>✔ Suporte de gerentes experientes</p>
-<p>✔ Possibilidade de renda extra</p>
-<p>✔ Presentes dos usuários</p>
-
-</section>
-
-<section>
-
-<h2>Entre em contato</h2>
-
-<a href="https://wa.me/380994944809">
-<button class="whatsapp">Falar no WhatsApp</button>
-</a>
-
-<a href="https://www.instagram.com/laco.deamor.oficial">
-<button class="instagram">Instagram</button>
-</a>
-
-</section>
-
-<footer>
-LaçoDeAmor © 2026
-</footer>
-
-</body>
-</html>
