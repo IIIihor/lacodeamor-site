@@ -1,602 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LaçoDeAmor</title>
-  <meta name="description" content="LaçoDeAmor - plataforma internacional com suporte, orientação e comunicação por mensagens." />
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fffafc;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; }
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #fbcfe8;
-    }
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 20px;
-    }
-    .brand-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: #e11d48;
-      margin: 0;
-    }
-    .brand-subtitle {
-      font-size: 14px;
-      color: #6b7280;
-      margin-top: 4px;
-    }
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .nav a {
-      color: #374151;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .nav a:hover { color: #e11d48; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaçoDeAmor</title>
 
-    .hero {
-      background: linear-gradient(135deg, #fff1f5 0%, #ffffff 50%, #fdf2f8 100%);
-      padding: 70px 0;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
-      align-items: center;
-    }
-    .badge {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid #fecdd3;
-      background: #fff;
-      color: #e11d48;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin: 18px 0 0;
-      color: #111827;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #4b5563;
-      margin-top: 20px;
-      max-width: 700px;
-    }
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 16px;
-      font-weight: 700;
-      font-size: 15px;
-      transition: 0.2s ease;
-    }
-    .btn-primary {
-      background: #e11d48;
-      color: white;
-      box-shadow: 0 10px 25px rgba(225,29,72,0.18);
-    }
-    .btn-primary:hover { background: #be123c; }
-    .btn-secondary {
-      background: white;
-      color: #374151;
-      border: 1px solid #d1d5db;
-    }
-    .btn-secondary:hover { background: #f9fafb; }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 24px;
-      color: #4b5563;
-      font-size: 14px;
-      font-weight: 600;
-    }
+/* ЛОГО */
+.logo {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #D4AF37;
+  letter-spacing: 2px;
+}
 
-    .card {
-      background: white;
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: 0 15px 40px rgba(244,114,182,0.12);
-      border: 1px solid #ffe4e6;
-    }
-    .mini-card {
-      background: #fff1f5;
-      border-radius: 20px;
-      padding: 16px;
-      margin-top: 14px;
-    }
-    .mini-card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
-    .mini-card p {
-      margin: 0;
-      font-size: 14px;
-      color: #4b5563;
-    }
+/* СЕТКА */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
-    .facts-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .fact-box {
-      background: white;
-      border-radius: 24px;
-      padding: 20px;
-      border: 1px solid #f3f4f6;
-      box-shadow: 0 8px 22px rgba(15,23,42,0.05);
-    }
-    .fact-value {
-      font-size: 30px;
-      font-weight: 700;
-      color: #e11d48;
-    }
-    .fact-label {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #6b7280;
-    }
+/* КАРТОЧКА */
+.card {
+  background: #111;
+  border-radius: 15px;
+  width: 260px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(212,175,55,0.1);
+}
 
-    section {
-      padding: 72px 0;
-    }
-    .section-title-small {
-      color: #e11d48;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: 40px;
-      margin: 0;
-      color: #111827;
-    }
-    .section-text {
-      margin-top: 16px;
-      color: #4b5563;
-      font-size: 17px;
-      max-width: 760px;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: start;
-    }
+/* ФОТО */
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
 
-    .dark-box {
-      background: #0f172a;
-      color: white;
-      border-radius: 30px;
-      padding: 28px;
-      box-shadow: 0 18px 40px rgba(15,23,42,0.18);
-    }
-    .dark-item {
-      background: rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 14px 16px;
-      margin-top: 12px;
-      font-size: 14px;
-    }
+/* ТЕКСТ */
+.card-content {
+  padding: 15px;
+}
 
-    .steps-grid,
-    .reviews-grid,
-    .benefits-grid {
-      display: grid;
-      gap: 18px;
-      margin-top: 28px;
-    }
-    .steps-grid { grid-template-columns: repeat(4, 1fr); }
-    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
-    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    .soft-card {
-      background: #fff8fb;
-      border: 1px solid #ffe4e6;
-      border-radius: 26px;
-      padding: 22px;
-    }
-    .soft-card h3, .review-name {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #111827;
-    }
-    .soft-card p, .review-text, .faq-text, .benefit-text {
-      margin: 0;
-      color: #4b5563;
-      font-size: 15px;
-    }
+.info {
+  color: #aaa;
+  font-size: 14px;
+  margin: 5px 0;
+}
 
-    .review-card, .benefit-card, .faq-card {
-      background: white;
-      border-radius: 26px;
-      padding: 22px;
-      border: 1px solid #f3f4f6;
-      box-shadow: 0 8px 20px rgba(15,23,42,0.05);
-    }
+.money {
+  color: #D4AF37;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+}
 
-    .benefit-row {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      margin-top: 8px;
-      border-radius: 50%;
-      background: #e11d48;
-      flex: 0 0 auto;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 26px;
-    }
-    .faq-question {
-      font-size: 17px;
-      font-weight: 700;
-      margin: 0 0 8px;
-      color: #111827;
-    }
-
-    .contact-box {
-      background: #0f172a;
-      color: white;
-      border-radius: 32px;
-      padding: 34px;
-      box-shadow: 0 18px 40px rgba(15,23,42,0.16);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .contact-actions {
-      display: grid;
-      gap: 14px;
-    }
-    .contact-link {
-      display: block;
-      border-radius: 18px;
-      padding: 16px;
-      text-align: center;
-      font-weight: 700;
-      color: white;
-    }
-    .wa { background: #22c55e; }
-    .ig { background: #ec4899; }
-    .contact-info {
-      background: rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 14px 16px;
-      font-size: 14px;
-    }
-
-    .floating-wa {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #22c55e;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 14px 30px rgba(34,197,94,0.28);
-      z-index: 50;
-    }
-
-    footer {
-      padding: 28px 0 50px;
-      color: #6b7280;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .two-col,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .steps-grid { grid-template-columns: repeat(2, 1fr); }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 40px; }
-      .section-title { font-size: 32px; }
-    }
-
-    @media (max-width: 640px) {
-      .nav { display: none; }
-      .steps-grid,
-      .facts-grid {
-        grid-template-columns: 1fr;
-      }
-      h1 { font-size: 34px; }
-      .header-inner { padding: 14px 0; }
-      section { padding: 56px 0; }
-    }
-  </style>
+.desc {
+  color: #ccc;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <div>
-        <div class="brand-title">LaçoDeAmor</div>
-        <div class="brand-subtitle">Conectando pessoas ao redor do mundo</div>
-      </div>
-      <nav class="nav">
-        <a href="#about">Sobre</a>
-        <a href="#work">Como funciona</a>
-        <a href="#benefits">Vantagens</a>
-        <a href="#reviews">Depoimentos</a>
-        <a href="#faq">Perguntas</a>
-        <a href="#contacts">Contato</a>
-      </nav>
+
+<div class="logo">
+  LaçoDeAmor
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <img src="girl1.jpg">
+    <div class="card-content">
+      <div class="name">Camila – 27 anos 🇧🇷</div>
+      <div class="info">6 meses na plataforma</div>
+      <div class="money">💰 $1.200/mês</div>
+      <div class="desc">✨ Tudo foi mais simples do que imaginei</div>
     </div>
-  </header>
+  </div>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge">Apenas mulheres 18+ • Plataforma internacional • Suporte especializado</div>
-        <h1>Ganhe renda extra conversando com estrangeiros de forma simples e segura</h1>
-        <p>
-          A LaçoDeAmor convida mulheres maiores de 18 anos para participar de uma plataforma internacional
-          onde é possível conversar com usuários estrangeiros por mensagens. Com acompanhamento da nossa equipe,
-          a participação pode se tornar uma fonte de renda extra estável ao longo do tempo.
-        </p>
-        <div class="buttons">
-          <a class="btn btn-primary" href="#contacts">Quero participar</a>
-          <a class="btn btn-secondary" href="#work">Como funciona</a>
-        </div>
-        <div class="hero-points">
-          <div>✔ Horário flexível</div>
-          <div>✔ Comunicação por mensagens</div>
-          <div>✔ Regras claras</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="card">
-          <div style="font-size:14px;color:#6b7280;">Por que escolher a LaçoDeAmor</div>
-
-          <div class="mini-card">
-            <h3>Suporte real de gerentes experientes</h3>
-            <p>Nossa equipe acompanha o processo e ajuda na organização das conversas desde o início.</p>
-          </div>
-
-          <div class="mini-card" style="background:#fdf2f8;">
-            <h3>Participação flexível</h3>
-            <p>Você escolhe quando participar, no seu ritmo, com mais praticidade no dia a dia.</p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Ambiente organizado e respeitoso</h3>
-            <p>Trabalhamos com regras claras para proteger as participantes e manter um ambiente seguro.</p>
-          </div>
-        </div>
-
-        <div class="facts-grid">
-          <div class="fact-box">
-            <div class="fact-value">10+</div>
-            <div class="fact-label">anos de experiência</div>
-          </div>
-          <div class="fact-box">
-            <div class="fact-value">5.000+</div>
-            <div class="fact-label">mulheres já colaboraram conosco</div>
-          </div>
-          <div class="fact-box">
-            <div class="fact-value">US$ 1M+</div>
-            <div class="fact-label">pagos às participantes</div>
-          </div>
-          <div class="fact-box">
-            <div class="fact-value">20+</div>
-            <div class="fact-label">países com presença</div>
-          </div>
-        </div>
-      </div>
+  <div class="card">
+    <img src="girl2.jpg">
+    <div class="card-content">
+      <div class="name">Laura – 31 anos 🇩🇪</div>
+      <div class="info">1 ano na plataforma</div>
+      <div class="money">💰 $2.800/mês</div>
+      <div class="desc">✨ A equipe sempre me ajudou</div>
     </div>
-  </section>
+  </div>
 
-  <section id="about">
-    <div class="container two-col">
-      <div>
-        <div class="section-title-small">Sobre a empresa</div>
-        <h2 class="section-title">Uma comunidade internacional com experiência e suporte</h2>
-        <div class="section-text">
-          A LaçoDeAmor atua há mais de 10 anos no mercado internacional e já colaborou com milhares de mulheres.
-          Nosso foco é oferecer uma estrutura clara, com orientação profissional, regras transparentes e atendimento
-          humanizado para quem deseja participar da plataforma com mais segurança e confiança.
-        </div>
-        <div class="section-text">
-          Além da possibilidade de renda extra, muitas participantes valorizam a flexibilidade do processo,
-          o contato com outras culturas e o suporte constante da nossa equipe.
-        </div>
-      </div>
-
-      <div class="dark-box">
-        <div style="font-size:24px;font-weight:700;">Fatos sobre a LaçoDeAmor</div>
-        <div class="dark-item">⭐ Mais de 10 anos de experiência no mercado internacional</div>
-        <div class="dark-item">👩 Mais de 5.000 mulheres já colaboraram conosco</div>
-        <div class="dark-item">💰 Mais de 1 milhão de dólares pagos às participantes</div>
-        <div class="dark-item">🌍 Presença em mais de 20 países ao redor do mundo</div>
-        <div class="dark-item">🏆 Destaque no setor entre 2020 e 2026</div>
-        <div class="dark-item">🤝 Equipe profissional de suporte e gerentes experientes</div>
-      </div>
+  <div class="card">
+    <img src="girl3.jpg">
+    <div class="card-content">
+      <div class="name">Valentina – 25 anos 🇦🇷</div>
+      <div class="info">8 meses na plataforma</div>
+      <div class="money">💰 $1.700/mês</div>
+      <div class="desc">✨ Me senti segura desde o início</div>
     </div>
-  </section>
+  </div>
 
-  <section id="work" style="background:#ffffff;border-top:1px solid #ffe4e6;border-bottom:1px solid #ffe4e6;">
-    <div class="container">
-      <div class="section-title-small">Como funciona</div>
-      <h2 class="section-title">Um processo simples, claro e com acompanhamento</h2>
-      <div class="section-text">
-        Nossa equipe orienta você em cada etapa para que tudo seja compreendido de forma prática desde o início.
-      </div>
-
-      <div class="steps-grid">
-        <div class="soft-card">
-          <h3>1. Cadastro</h3>
-          <p>Você entra em contato com a nossa equipe e recebe todas as informações iniciais para participação.</p>
-        </div>
-        <div class="soft-card">
-          <h3>2. Orientação</h3>
-          <p>Explicamos como funciona a plataforma, as regras, o suporte disponível e tiramos suas dúvidas.</p>
-        </div>
-        <div class="soft-card">
-          <h3>3. Participação</h3>
-          <p>Você conversa com usuários estrangeiros por mensagens, com acompanhamento da nossa equipe experiente.</p>
-        </div>
-        <div class="soft-card">
-          <h3>4. Ganhos</h3>
-          <p>Com consistência, a participação pode gerar renda extra estável e até o recebimento de presentes na plataforma.</p>
-        </div>
-      </div>
+  <div class="card">
+    <img src="girl4.jpg">
+    <div class="card-content">
+      <div class="name">Emily – 30 anos 🇺🇸</div>
+      <div class="info">2 anos na plataforma</div>
+      <div class="money">💰 $4.500/mês</div>
+      <div class="desc">✨ Liberdade e suporte incríveis</div>
     </div>
-  </section>
+  </div>
 
-  <section id="benefits">
-    <div class="container two-col">
-      <div>
-        <div class="section-title-small">Vantagens</div>
-        <h2 class="section-title">Mais praticidade, flexibilidade e acompanhamento</h2>
-        <div class="section-text">
-          Participar com a LaçoDeAmor significa contar com suporte, orientação e uma estrutura organizada para começar com mais tranquilidade.
-        </div>
-      </div>
-
-      <div class="benefits-grid">
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Horário flexível para participar quando quiser</div></div></div>
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Possibilidade de renda extra de forma prática</div></div></div>
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Suporte de gerentes experientes</div></div></div>
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Contato com pessoas de diferentes países</div></div></div>
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Plataforma organizada, segura e com regras claras</div></div></div>
-        <div class="benefit-card"><div class="benefit-row"><div class="dot"></div><div class="benefit-text">Ambiente respeitoso e comunicação amigável</div></div></div>
-      </div>
+  <div class="card">
+    <img src="girl5.jpg">
+    <div class="card-content">
+      <div class="name">Giulia – 28 anos 🇮🇹</div>
+      <div class="info">1 ano na plataforma</div>
+      <div class="money">💰 $3.200/mês</div>
+      <div class="desc">✨ Uma ótima oportunidade online</div>
     </div>
-  </section>
+  </div>
 
-  <section id="reviews" style="background:linear-gradient(180deg,#ffffff 0%,#fff1f5 100%);border-top:1px solid #ffe4e6;border-bottom:1px solid #ffe4e6;">
-    <div class="container">
-      <div class="section-title-small">Depoimentos</div>
-      <h2 class="section-title">O que dizem sobre a experiência</h2>
-      <div class="section-text">Comentários de participantes que conheceram a nossa estrutura e atendimento.</div>
+</div>
 
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-name">Ana, 24</div>
-          <div class="review-text">“Gostei porque tudo foi explicado de forma simples. O suporte respondeu rápido e me ajudou desde o início.”</div>
-        </div>
-        <div class="review-card">
-          <div class="review-name">Beatriz, 27</div>
-          <div class="review-text">“A plataforma é organizada e o horário flexível me ajudou muito. A equipe acompanha e orienta em cada etapa.”</div>
-        </div>
-        <div class="review-card">
-          <div class="review-name">Marina, 22</div>
-          <div class="review-text">“Eu tinha dúvidas no começo, mas o processo foi tranquilo. O atendimento é educado e passa segurança.”</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <div class="section-title-small">Perguntas frequentes</div>
-      <h2 class="section-title">Dúvidas comuns</h2>
-
-      <div class="faq-list">
-        <div class="faq-card">
-          <div class="faq-question">Quem pode participar?</div>
-          <div class="faq-text">A participação é destinada apenas a mulheres maiores de 18 anos.</div>
-        </div>
-        <div class="faq-card">
-          <div class="faq-question">Preciso aparecer em vídeo?</div>
-          <div class="faq-text">Não. A participação acontece principalmente por mensagens. Em alguns casos podem ser solicitadas fotos simples do dia a dia.</div>
-        </div>
-        <div class="faq-card">
-          <div class="faq-question">É seguro?</div>
-          <div class="faq-text">Sim. Trabalhamos com regras claras, equipe de suporte e acompanhamento para manter um ambiente respeitoso e organizado.</div>
-        </div>
-        <div class="faq-card">
-          <div class="faq-question">Conteúdo adulto é permitido?</div>
-          <div class="faq-text">Não. Fotos íntimas ou conteúdo adulto não são permitidos.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacts">
-    <div class="container">
-      <div class="contact-box">
-        <div class="contact-grid">
-          <div>
-            <div class="section-title-small" style="color:#fda4af;">Contato</div>
-            <h2 class="section-title" style="color:white;">Quer saber como participar?</h2>
-            <div class="section-text" style="color:#cbd5e1;">
-              Fale com a nossa equipe para receber informações, entender como funciona a plataforma e tirar suas dúvidas com tranquilidade.
-            </div>
-          </div>
-
-          <div class="contact-actions">
-            <a class="contact-link wa" href="https://wa.me/380994944809" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
-            <a class="contact-link ig" href="https://www.instagram.com/laco.deamor.oficial?igsh=M2ptbWw2bnljaWt2&utm_source=qr" target="_blank" rel="noreferrer">Instagram oficial</a>
-            <div class="contact-info">E-mail: laco.deamor.oficiall@gmail.com</div>
-            <div class="contact-info">Horário de atendimento: Seg–Sex, 09:00–18:00</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    LaçoDeAmor © 2026
-  </footer>
-
-  <a class="floating-wa" href="https://wa.me/380994944809" target="_blank" rel="noreferrer">WhatsApp</a>
 </body>
 </html>
